@@ -7,14 +7,13 @@
     {{else}}
     <title>TaskZ</title>
     {{/if}}
-<link rel="stylesheet" type="text/css" href="/public/style.css" />
-<link rel="stylesheet" type="text/css" href="/public/navbar.css" />
-<link rel="stylesheet" type="text/css" href="/public/home.css" />
-<link rel="stylesheet" type="text/css" href="/public/create.css" />
-<link rel="stylesheet" type="text/css" href="/public/preview.css" />
-<link rel="stylesheet" type="text/css" href="/public/edit.css" />
-<link rel="stylesheet" type="text/css" href="/public/error.css" />
-<link rel="stylesheet" type="text/css" href="/public/load.css" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="stylesheet" type="text/css" href="/public/load.css" />
+    {{#if css}}
+        {{#each css}}
+            <link rel="stylesheet" type="text/css" href="/public/{{this}}.css" />
+        {{/each}}
+    {{/if}}
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

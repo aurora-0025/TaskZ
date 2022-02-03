@@ -129,7 +129,8 @@ router.route('/home')
                 res.render('home', {
                     title:'TaskZ', 
                     tasks:pendingTasks,
-                    doneTasks:completedTasks
+                    doneTasks:completedTasks,
+                    css:['home','navbar']
                 })
             }
             else{
@@ -142,7 +143,7 @@ router.route('/home')
 
 router.route('/create')
     .get((req, res) => {
-        res.render('create', {title:'Create A Task'})
+        res.render('create', {title:'Create A Task', css: ['create']})
     })
     .post((req, res)=>{
         addTask(req, res)  
@@ -155,7 +156,7 @@ router.route('/preview/:id')
     .get((req,res)=>{
         taskModel.findById(req.params.id, (err, doc)=>{
             if(!err){
-                res.render('preview', {title:'Preview Task', task:doc.toJSON()}) 
+                res.render('preview', {title:'Preview Task', task:doc.toJSON(), css:['preview']}) 
             }
             else{
                 console.log(err);
@@ -182,7 +183,7 @@ router.route('/edit/:id')
     .post((req, res)=>{
         taskModel.findById(req.params.id, function (err,doc) {
             if(!err){
-                res.render('edit',{title:'Edit Task', task:doc.toJSON()})
+                res.render('edit',{title:'Edit Task', task:doc.toJSON(), css:['edit']})
             }
             else{
                 console.log(err);
@@ -202,12 +203,12 @@ router.route('/done/:id')
 
 //HANDLE 500
 router.get('/500', (req,res)=>{
-    res.render('500', {title:'500'})
+    res.render('500', {title:'500', css:['error']})
 })
 
 //HANDLE 404
 router.get('/404', (req,res)=>{
-    res.render('404', {title:'404'})
+    res.render('404', {title:'404', css:['error']})
 })
 router.get('*', (req, res)=>{
     res.redirect('/404')
