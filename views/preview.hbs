@@ -1,0 +1,79 @@
+<input type="hidden" id="previewData" value='{{task.taskDesc}}'>
+
+<!-- The Modal -->
+<div id="delModal" class="modal">
+  <!-- Modal content -->
+  <form class="modal-content" method="post">
+    <strong>Are you sure you want to delete this task</strong>
+    <p>This will permanently remove this task</p>
+    <div class="modal-button-container">
+      <a class="close">Cancel</a>
+      <button class="delete" type="submit" formaction="/home/delete/{{task._id}}">Delete</button>
+    </div>
+  </form>
+</div>
+
+
+<div class="preview-background">
+    <form class="preview-form" method="post">
+        <input type="hidden" name="taskDue" formaction="/done/{{task._id}}" value="{{task.taskDue}}">
+        <div class="preview-form-bg" style="background-color: {{task.taskColor}};"></div>
+        <div class="preview-emoji" style="background-color: {{task.taskColor}};">{{task.taskEmoji}}</div>
+        <div class="task-head">
+            <h3>{{task.taskName}}</h3>
+        </div>
+        <div class="desc-head">
+            <h3>Task Description:</h3>
+            <h3 class="preview-status">Status: <span>{{task.taskStatus}}</span></h3>            
+        </div>
+        <div class="preview-desc-container">
+            <div class="preview-description sun-editor-editable" id="prevDesc"></div>
+        </div>
+          {{#if task.taskDone}}
+          <div class="preview-button-container">
+              <a id="delBtn">Remove Task</a>
+          </div>
+          {{else }}
+          <div class="preview-button-container"">
+              <button id="doneBtn" type="submit" formaction="/done/{{task._id}}">Mark As Done</button>
+              <a id="delBtn">Delete Task</a>
+              <button id="editBtn" type="submit" formaction="/edit/{{task._id}}">Edit Task</button>
+          </div>
+          {{/if}}
+    </form>
+</div>
+<link href="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/css/suneditor.min.css" rel="stylesheet">
+<script>
+    //set description
+    let prevData = document.getElementById('previewData').value
+    document.getElementById('prevDesc').innerHTML=prevData
+
+    // Get the modal
+    var modal = document.getElementById("delModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("delBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    
+
+</script>

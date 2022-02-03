@@ -1,0 +1,186 @@
+/* DELETE MODAL */
+/* The Modal (background) */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 1rem;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  .modal-content .delete:hover,
+  .modal-content .delete:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* The Close Button */
+  .modal-content .close {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-content .close:hover,
+  .modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+    /* The Delete Button */
+    .modal-content .delete {
+        all: unset;
+        background: none;
+        border: none;
+        text-decoration: none;
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 0;
+      }
+
+.preview-background {
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-form {
+    padding: 0.5rem 2rem 2rem 2rem;
+    position: relative;
+    background-color: #FCFCFD;
+    min-width: 40vw;
+    max-width: 80vw;
+    max-height: 80vh;
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75em;
+    border: 0.18em solid black;
+}
+
+.preview-form-bg {
+    position: absolute;
+    top: 0rem;
+    bottom: 0;
+    left: 0rem;
+    right: 0;
+    width: 101.5%;
+    height: 105%;
+    z-index: -1;
+    border-radius: 0.75em;
+    border: 0.18em solid black;
+}
+
+.preview-emoji{
+    background: #AFE1FF;
+    position: absolute;
+    top: -0.6rem;
+    left: -1rem;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    vertical-align: middle;
+    line-height: 5rem;
+    border-radius: 0.75rem;
+    border: 0.18rem solid black;
+}
+
+.preview-form .task-head{
+    font-family: 'Supermercado One', cursive;
+    text-decoration: underline;
+    font-size: xx-large;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+    padding: 0;
+}
+
+.preview-form .desc-head{
+    font-family: 'Supermercado One', cursive;
+    font-size: large;
+    line-height: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.preview-status span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-size: 90%;
+}
+
+.preview-desc-container{
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    margin: 0 0 2rem 0;
+    padding: 0.3rem;
+    height: 100%;
+    max-height: 20rem;
+    border-radius: 0.5rem;
+    overflow-y: scroll ;
+    scrollbar-width:none;
+}
+.preview-desc-container::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.preview-button-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.preview-button-container #delBtn, #editBtn, #doneBtn{
+    all: unset;
+    background: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: #aaa;
+    font-weight: bold;
+	padding: 0.2rem;
+    border-radius: 0.2rem;
+	cursor: pointer;
+    transition: 0.3s;
+}
+
+.preview-button-container #delBtn:hover {
+    background-color: rgba(223, 87, 87, 0.8);
+    color: white;
+}
+
+.preview-button-container #doneBtn:hover {
+    background-color: rgba(87, 223, 105, 0.8);
+    color: white;
+}
+
+.preview-button-container #editBtn:hover {
+    background-color: rgba(87, 96, 223, 0.8);
+    color: white; 
+}

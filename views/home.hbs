@@ -1,0 +1,51 @@
+{{> navbar}}
+<div class="home-task-container">
+    {{#if tasks}}
+    {{#each tasks}}
+    <form action="/preview/{{this._id}}"  method="get">
+        <button class="home-create-task"  type="submit">
+            <div class="home-create-task-bg" style="background-color: {{this.taskColor}};"></div>
+            <div class="home-emoji" style="background-color: {{this.taskColor}};">{{this.taskEmoji}}</div>
+            <div class="home-status">{{this.taskStatus}}</div>
+            <div class="home-taskname" style="color: {{this.taskColor}}; filter: invert(1) hue-rotate(180deg) saturate(10) brightness(75%);)">{{this.taskName}}</div>
+            <div class="home-target-time"><p class="day">{{this.taskDay}}</p><p class="time">{{this.taskTime}}</p></div>
+        </button>
+    </form>
+    {{/each}}
+    {{else}}
+        <p class="noTask">No Ongoing task <a href="/create">Create</a> a task now</p>
+    {{/if}}
+</div>
+    {{#if doneTasks}}
+    <h2 class="done-heading">Completed Tasks</h2>
+    <div class="done-task-container">
+        {{#each doneTasks}}
+        <form action="/preview/{{this._id}}" method="get">
+            <button class="done-create-task" type="submit">
+                <div class="done-name-container">
+                    <div class="done-taskname" style="color: {{this.taskColor}}; filter: invert(1) hue-rotate(180deg) saturate(10) brightness(75%);)">{{this.taskName}}</div>
+                </div>
+                <div class="done-content"> 
+                    <div class="done-date">
+                        <h2>Completed On</h2>
+                        <div class="done-day">{{this.taskDoneDay}}</div>
+                        <div class="done-time">{{this.taskDoneTime}}</div>
+                    </div>
+                    <div class="done-due-date">
+                        <h2>Task Date</h2>
+                        <div class="done-due-day">{{this.taskDay}}</div>
+                        <div class="done-due-time">{{this.taskTime}}</div>
+                    </div>
+                    <div class="done-status">{{this.taskDoneStatus}}</div>
+                    <div class="done-create-task-bg" style="background-color: {{this.taskColor}};"></div>
+                    <div class="done-emoji" style="background-color: {{this.taskColor}};">{{this.taskEmoji}}</div>
+                </div>
+
+            </button>
+        </form>
+        {{/each}}
+    </div>
+    {{/if}}
+<script src="/scripts/h-scroll.js"></script>
+
+

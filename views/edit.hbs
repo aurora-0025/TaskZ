@@ -1,0 +1,47 @@
+<input type="hidden" id="editData" value='{{task.taskDesc}}'>
+<input type="hidden" id="editDueData" value='{{task.taskDue}}'>
+<div class="edit-container">
+    <form class="edit-form" action="/edit/{{task._id}}/save" method="post">
+      <div class="edit-form-bg" style="background-color: {{task.taskColor}};"></div>  
+      <div class="edit-theme-container">
+        <div class="edit-emoji-container">
+            <label for="task-emoji">Choose Task Emoji</label>
+            <input type="text" name="taskEmoji" value="{{task.taskEmoji}}" id="emoji-input" maxlength="1" required>
+        </div>
+        <emoji-picker class="light"></emoji-picker>
+        <div class="edit-color-container">
+          <label for="task-color">Choose Task Theme</label>
+          <input type="color" name="taskTheme" id="task-color" value="{{task.taskColor}}" required>
+        </div>
+      </div>
+      <div class="edit-name-date-container">
+        <div class="edit-name-container">
+          <label for="task-name" required>Task Name</label>
+          <input type="text" maxlength="25" value="{{task.taskName}}" name="taskName" autocomplete="off" id="task-name" required>
+        </div>
+        <div class="edit-date-container">
+          <label for="task-datetime" required>Reschedule</label>
+          <input type="datetime-local" name="taskDatetime" id="task-datetime" value="{{task.taskDue}}" required>
+        </div>
+      </div>
+      <label for="textarea">Task Description</label>
+      <textarea name="textArea" class="skeleton" id="textarea" cols="30" rows="10"></textarea>
+      <div class="edit-submit-container">
+        <a href="/home">Cancel</a>
+        <button type="submit" id="task-save">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+
+<script src="/scripts/editEditor.js"></script>
+
+<script src="/scripts/min-date.js"></script>
+
+<script type="text/javascript" src="/scripts/emoji-picker.js"></script>
+
+

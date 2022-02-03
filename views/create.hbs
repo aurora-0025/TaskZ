@@ -1,0 +1,51 @@
+<div class="task-create-container">
+    <form class="create-form" action="/create" method="post">
+      <div class="create-form-bg"></div>  
+      <div class="theme-container">
+        <div class="emoji-container">
+            <label for="task-emoji">Choose Task Emoji</label>
+            <input type="text" name="taskEmoji" value="😀" id="emoji-input" maxlength="1" required>
+        </div>
+        <emoji-picker class="light"></emoji-picker>
+        <div class="color-container">
+          <label for="task-color">Choose Task Theme</label>
+          <input type="color" name="taskTheme" id="task-color" required>
+        </div>
+      </div>
+      <div class="name-date-container">
+        <div class="name-container">
+          <label for="task-name" required>Task Name</label>
+          <input type="text" maxlength="25" name="taskName" autocomplete="off" id="task-name" required>
+        </div>
+        <div class="date-container">
+          <label for="task-datetime" required>Due Date</label>
+          <input type="datetime-local" name="taskDatetime" id="task-datetime" required>
+        </div>
+      </div>
+      <label for="textarea">Task Description</label>
+      <textarea name="textArea" id="textarea" cols="30" rows="10"></textarea>
+      <div class="submit-container">
+        <a href="/home">Cancel</a>
+        <button type="submit" id="task-save">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/src/lang/en.js"></script>
+
+<script src="/scripts/createEditor.js"></script>
+
+<script src="/scripts/randomColor.js"></script>
+
+<script src="/scripts/min-date.js"></script>
+
+<script type="text/javascript" src="/scripts/emoji-picker.js"></script>
+
+<script>
+document.getElementById("task-datetime").value = new Date().toISOString().slice(0,16);
+</script>
+
+

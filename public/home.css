@@ -1,0 +1,251 @@
+/* HOME */
+.noTask {
+    margin-top: 5rem;
+  }
+  
+  .home-task-container{
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scrollbar-width:none;
+      align-items: center;
+      justify-content: safe center;
+  }
+
+  .home-task-container form{
+      display: flex;
+  }
+
+  .home-task-container form:first-child{
+      margin-left: auto;
+  }
+  .home-task-container form:last-child{
+    margin-right: auto;
+}
+
+  ::-webkit-scrollbar {
+      width: 0;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+  .home-create-task-bg{
+    position: absolute;
+    top: .4rem;
+    bottom: 0;
+    left: .4rem;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 0.75em;
+    border: 0.20rem solid black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px, rgba(0, 0, 0, 0.22) 0px 1px 10px;
+  }
+  .home-create-task {
+      font-family: 'Rubik', sans-serif;
+      font-weight:500;
+      font-size: 180%;
+      position: relative;
+      margin: 1rem 0.8rem 2rem 0.8rem;
+      width: 8rem;
+      min-width: 180px;
+      min-height: 250px;
+      height: 10rem;
+      text-align: left;
+      padding: 0 0.1rem 1rem 0.3rem;
+      border-radius: 0.75em;
+      background-color: #FCFCFD;
+      color: #5fb8f0;
+      border: 0.20rem solid black;
+      transition: 1s;
+  }
+  .home-create-task:hover{
+      background-color: #f0f0f0;
+      cursor: pointer;
+  }
+  .home-create-task:active{
+      top: 10px;
+  }
+  
+  .home-emoji{
+      background: #AFE1FF;
+      position: absolute;
+      top: -0.6rem;
+      left: -0.6rem;
+      font-size: 2.2rem;
+      text-align: center;
+      width: 3rem;
+      height: 3rem;
+      vertical-align: middle;
+      line-height: 3rem;
+      border-radius: 0.75rem;
+      border: 0.18rem solid black;
+      transition: 0.5s;
+  }
+  .home-emoji:hover{
+    padding: 2px;
+  }
+  
+  .home-status{
+    position: absolute;
+    top:0;
+    right: 0.3rem;
+    bottom: 0.2rem;
+    margin: 0 0.2rem 0.2rem 0;
+    font-size: 0.8em;
+    color: #0000004f;
+  }
+  
+  .home-target-time{
+      color: black;
+      position: absolute;
+      font-size: 0.6em;
+      bottom: 0.2rem;
+      right: 0.2rem;
+      margin: 0 0.2rem 0.2rem 0;
+      font-weight: lighter;
+      text-align: right;
+  }
+  
+  .home-target-time .day{
+    font-weight: 800 !important;
+  }
+
+  .home-taskname {
+    overflow-wrap: break-word;
+}
+  
+  .home-target-time .day, .home-target-time .time{
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight:400;
+  }
+
+  /* Completed Tasks */
+
+  .done-heading{
+    text-align: center;
+    font-family: 'Supermercado One', cursive;
+    font-size: 3vw;
+  }
+
+.done-task-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.done-task-container form{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.done-create-task-bg{
+  position: absolute;
+  top: .4rem;
+  bottom: 0;
+  left: .4rem;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 0.75em;
+  border: 0.20rem solid black;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px, rgba(0, 0, 0, 0.22) 0px 1px 10px;
+}
+.done-create-task {
+    font-family: 'Rubik', sans-serif;
+    font-weight:500;
+    position: relative;
+    margin: 1rem 0.8rem 2rem 0.8rem;
+    width: 60%;
+    min-width: 180px;
+    min-height: 250px;
+    text-align: left;
+    border-radius: 0.75em;
+    background-color: #FCFCFD;
+    color: #5fb8f0;
+    border: 0.20rem solid black;
+    transition: 1s;
+}
+.done-create-task:hover{
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.done-create-task:active{
+    top: 10px;
+}
+
+.done-emoji{
+    background: #AFE1FF;
+    position: absolute;
+    top: -0.6rem;
+    left: -0.6rem;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+    line-height: 3rem;
+    border-radius: 0.75rem;
+    border: 0.18rem solid black;
+    transition: 0.5s;
+}
+.done-emoji:hover{
+  padding: 2px;
+}
+
+.done-status{
+  position: absolute;
+  top:0;
+  right: 0.3rem;
+  margin: 0.2rem 0.2rem 0.2rem 0;
+  font-size: 1rem;
+  color: #0000004f;
+}
+
+.done-content {
+  display: flex;
+  justify-content: space-around;
+}
+.done-date {
+  float: left;
+  line-height: 2rem;
+  color: black;
+}
+
+.done-date h2{
+  font-family: 'Supermercado One', cursive;
+  font-size: xx-large;
+  line-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.done-due-date {
+  line-height: 2rem;
+  float: inline-end;
+  color: black;
+}
+
+.done-due-date h2{
+  font-family: 'Supermercado One', cursive;
+  font-size: xx-large;
+  line-height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.done-taskname {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Supermercado One', cursive;
+  text-decoration: underline;
+  font-size: xx-large;
+}

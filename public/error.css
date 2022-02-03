@@ -1,0 +1,39 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+.parent-container {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+}
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ecf0f1;
+}
+
+.error-container {
+  text-align: center;
+  margin: auto;
+  padding: 4em;
+}
+
+.error-container img {
+    width: 256px;
+    height: 225px;
+  }
+
+.error-container  h1 {
+    margin-top: 1rem;
+    font-size: 35px;
+    text-align: center;
+}
+
+.error-container h1 span {
+      font-size: 60px;
+    }
+    .error-container  p {
+    margin-top: 1rem;
+  }
+  
