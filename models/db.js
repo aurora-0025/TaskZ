@@ -1,9 +1,10 @@
 const { connect } = require('mongoose');
+require('dotenv').config()
 //call the Schema file
 require('./task.model')
 
 // Connect to Database
-connect('mongodb://127.0.0.1:27017/todo',{useNewUrlParser: true})
+connect(process.env.DATABASE_URI,{useNewUrlParser: true})
 .then(()=>{    
     console.log("The db is connected")
 
