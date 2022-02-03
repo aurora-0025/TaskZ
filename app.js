@@ -29,6 +29,6 @@ app.use('/assets',express.static(__dirname + '/assets'));
 
 app.use('/',router) //middleware to call all routes
 
-//Initialize the server to the port 3001 or .env port
-app.listen(process.env.PORT || 3001, 
+//Initialize the server to the port 3000 or .env port
+app.listen(process.env.PORT || 3000, 
 	() => console.log("Server is running..."));

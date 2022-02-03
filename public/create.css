@@ -114,9 +114,8 @@ emoji-picker {
   padding: 5px;
 }
 
-
 #textarea {
-  max-width: 100%;
+  width: 95%;
 }
 
 .submit-container{
