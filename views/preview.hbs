@@ -14,8 +14,8 @@
 </div>
 
 
-<div class="preview-background">
-    <form class="preview-form" method="post">
+<div class="preview-background" id="prev-bg">
+    <form class="preview-form" id="prev-form" method="post">
         <input type="hidden" name="taskDue" formaction="/done/{{task._id}}" value="{{task.taskDue}}">
         <div class="preview-form-bg" style="background-color: {{task.taskColor}};"></div>
         <div class="preview-emoji" style="background-color: {{task.taskColor}};">{{task.taskEmoji}}</div>
@@ -74,6 +74,10 @@
       }
     }
 
-    
-
+window.addEventListener('click', function(e){   
+    if (!document.getElementById('prev-form').contains(e.target)){ 
+      document.getElementById('prev-bg').addEventListener('click', function(e) {
+        window.location.href = '/';
+  }, false);
+}})
 </script>
