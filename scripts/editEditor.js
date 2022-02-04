@@ -1,7 +1,19 @@
 let editData = document.getElementById('editData').value
 let editDueData = document.getElementById('editDueData').value
 
-document.getElementById("task-datetime").value = new Date(editDueData).toISOString().slice(0,16);
+function convertUTCDateToLocalDate(date) {
+  var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+  var offset = date.getTimezoneOffset() / 60;
+  var hours = date.getHours();
+
+  newDate.setHours(hours - offset);
+
+  return newDate;   
+}
+
+
+document.getElementById("task-datetime").value = convertUTCDateToLocalDate(new Date()).toISOString().slice(0,16);
 
 
 const textArea = document.getElementById('textarea')
