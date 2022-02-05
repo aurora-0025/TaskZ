@@ -23,6 +23,7 @@
         </div>
       </div>
       <label for="textarea">Task Description</label>
+      <div id="create-error"></div>
       <textarea name="textArea" id="textarea" rows="13"></textarea>
       <div class="submit-container">
         <a href="/home">Cancel</a>
@@ -40,12 +41,19 @@
 
 <script src="/scripts/randomColor.js"></script>
 
+<script>
+const dateList = (new Date().toString().split(' '));
+const month = (new Date().getMonth() + 1).toLocaleString('en-US', {
+  minimumIntegerDigits: 2,
+  useGrouping: false
+});
+const ISOlocalDate = (`${dateList[3]}-${month}-${dateList[2]}T${dateList[4]}`).slice(0,16)
+document.getElementById("task-datetime").value = ISOlocalDate;
+</script>
+
 <script src="/scripts/min-date.js"></script>
 
 <script type="text/javascript" src="/scripts/emoji-picker.js"></script>
 
-<script>
-document.getElementById("task-datetime").value = new Date().toISOString().slice(0,16);
-</script>
 
 

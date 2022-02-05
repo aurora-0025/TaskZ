@@ -150,3 +150,7 @@ emoji-picker {
 .done-day, .done-due-day, .done-time, .done-due-time {
   font-size: large;
 }
+
+#create-error{
+  width: 100%;
+}
