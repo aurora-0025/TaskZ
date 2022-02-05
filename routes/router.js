@@ -10,7 +10,7 @@ const taskModel = model('Task')
 // Functions
 
 function markDone(req, res) {
-    doneDate = moment()
+    doneDate = moment().local()
     let doneData = findDoneDayTime(req.body.taskDue, doneDate)
 
     let data = {}
@@ -48,6 +48,7 @@ taskModel.findByIdAndUpdate(doc.id,task ,function (err, docs) {
         }
         else{
             console.log(err);
+            res.redirect('/505')
         }
     })
 }
@@ -97,6 +98,7 @@ function addTask(req, res) {
         }
         else{
             console.log(`An error occured while saving ${err}`);
+            res.redirect('/505')
         }
     })
 }

@@ -8,14 +8,9 @@ module.exports = function findDayTime(dueDate) {
     if(moment(dueDate).isAfter(moment(new Date()).local(),'second')){
         status ="Due";
     }
-    if(moment(dueDate).isSame(moment(new Date()).local(),'day')){
-        time = moment(dueDate).fromNow()
-    }
     if(moment(dueDate).isBefore(moment(new Date()).local(),'second')){
         status ="Late"
     }
-
-
   
     let result = {
         "date": date,
