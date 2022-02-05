@@ -1,5 +1,6 @@
 let editData = document.getElementById('editData').value
 let editDueData = document.getElementById('editDueData').value
+const saveBtn = document.getElementById('task-save');
 
 function convertUTCDateToLocalDate(date) {
   var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
@@ -37,11 +38,6 @@ const editor = SUNEDITOR.create((textArea),{
   value : editData,
 
 });
-
-
-console.log('contents', editor.getContents())
-
-const saveBtn = document.getElementById('task-save');
 
 saveBtn.addEventListener('click', ()=>{
   textArea.value = editor.getContents()

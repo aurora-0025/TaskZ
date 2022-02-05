@@ -19,9 +19,6 @@ const editor = SUNEDITOR.create((textArea),{
 
 });
 
-
-console.log('contents', editor.getContents())
-
 const saveBtn = document.getElementById('task-save');
 
 saveBtn.addEventListener('click', ()=>{
