@@ -8,6 +8,23 @@ body{
     background-size: 350px 350px;
 }
 
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  
+  ::-webkit-color-swatch{
+    border: 0;
+    border-radius: 50%;
+  }
+  
+  ::-moz-color-swatch,
+  ::-moz-focus-inner{
+    border: 0;
+  }
+  
+  ::-moz-focus-inner{
+    padding: 0;
+  }
 
 
 
