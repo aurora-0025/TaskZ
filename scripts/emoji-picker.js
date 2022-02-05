@@ -53,6 +53,10 @@ button.readOnly = true;
 
 button.addEventListener('click', ()=>{
     fadeIn(emojiPicker)
+    emojiPicker.addEventListener('emoji-click', event => {
+        fadeOut(emojiPicker)
+        button.value=event.detail.unicode
+    });
     //I'm using "click" but it works with any event
     document.addEventListener('click', function(event) {
         var isClickInside = emojiPicker.contains(event.target);
@@ -62,10 +66,6 @@ button.addEventListener('click', ()=>{
         //the click was outside the specifiedElement, do something
         fadeOut(emojiPicker)
         }
-        emojiPicker.addEventListener('emoji-click', event => {
-            fadeOut(emojiPicker)
-            button.value=event.detail.unicode
-        });
     });
 
 })
