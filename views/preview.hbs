@@ -23,22 +23,31 @@
             <h3>{{task.taskName}}</h3>
         </div>
         <div class="desc-head">
+           {{#if task.taskDone}}
             <h3>Task Description:</h3>
-            <h3 class="preview-status">Status: <span>{{task.taskStatus}}</span></h3>            
+            <h3 class="preview-status">Status: <span>Completed</span></h3>            
         </div>
         <div class="preview-desc-container">
             <div class="preview-description sun-editor-editable" id="prevDesc"></div>
         </div>
-          {{#if task.taskDone}}
           <div class="preview-button-container">
               <a id="delBtn">Remove Task</a>
           </div>
           {{else }}
-          <div class="preview-button-container">
-              <button id="doneBtn" type="submit" formaction="/done/{{task._id}}">Mark As Done</button>
-              <a id="delBtn">Delete Task</a>
-              <button id="editBtn" type="submit" formaction="/edit/{{task._id}}">Edit Task</button>
+          <h3>Task Description:</h3>
+              <h3 class="preview-status">Status: <span>{{task.taskStatus}}</span></h3>            
           </div>
+          <div class="preview-desc-container">
+              <div class="preview-description sun-editor-editable" id="prevDesc"></div>
+          </div>
+            <div class="preview-button-container">
+                <a id="delBtn">Remove Task</a>
+            </div>
+            <div class="preview-button-container">
+                <button id="doneBtn" type="submit" formaction="/done/{{task._id}}">Mark As Done</button>
+                <a id="delBtn">Delete Task</a>
+                <button id="editBtn" type="submit" formaction="/edit/{{task._id}}">Edit Task</button>
+            </div>
           {{/if}}
     </form>
 </div>
