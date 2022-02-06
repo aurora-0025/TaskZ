@@ -4,7 +4,7 @@ module.exports = function findDoneDayTime(dueDate, done) {
 let date = moment(dueDate, false).local().format("DD:MM:YYYY");
 let doneDate = moment(done, false).local().format("DD:MM:YYYY");
 let doneTime =  moment(done, false).local().format("hh:mm A");
-let dueTime =  moment(dueDate, false).local().format("hh:mm A");
+let dueTime =  moment.utc(dueDate, false).local().format("hh:mm A");
 let doneStatus = "done Late"
 
 if(moment(dueDate).isAfter(moment(new Date()).local(),'second')){
