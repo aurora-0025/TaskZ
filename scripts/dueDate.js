@@ -2,7 +2,7 @@ const moment = require('moment')
 module.exports = function findDayTime(dueDate) {
 
     let date = moment(dueDate).local().calendar().split(" at")[0];
-    let time =  moment(dueDate).local().format("hh:mm A");
+    let time =  moment.utc(dueDate).local().format("hh:mm A");
     let status;
 
     if(moment(dueDate).isAfter(moment(new Date()).local(),'second')){
